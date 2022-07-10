@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_nav"
+    app:startDestination="@id/FragmentA">
+
+    <fragment
+        android:id="@+id/FragmentA"
+        android:name="com.express.android.safeargsnav.fragments.FragmentA"
+        android:label="A"
+        tools:layout="@layout/fragment_a" >
+        <action
+            android:id="@+id/action_fragmentA_to_fragmentB"
+            app:destination="@id/FragmentB" />
+    </fragment>
+    <fragment
+        android:id="@+id/FragmentB"
+        android:name="com.express.android.safeargsnav.fragments.FragmentB"
+        android:label="B"
+        tools:layout="@layout/fragment_b" >
+        <action
+            android:id="@+id/fragmentB_to_fragmentA"
+            app:destination="@id/FragmentA" />
+        <argument
+            android:name="currentUser"
+            app:argType="com.express.android.safeargsnav.model.User" />
+    </fragment>
+
+</navigation>
